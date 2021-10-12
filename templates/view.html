@@ -1,0 +1,48 @@
+{% extends "main.html" %}
+{% block content %}
+<section class="pb-5 header text-center">
+    <div class="container py-2 text-black">
+        <header class="py-5">
+            <h1 class="display-4">View</h1>
+        </header>
+        <div class="row">
+            <div class="col-lg-12 mx-auto">
+                <div class="card border-0 shadow">
+                    <div class="card-body p-5">
+                        <!-- Responsive table -->
+                        <div class="table-responsive">
+                            <table class="table m-0">
+                                <thead>
+                                    <tr>
+                                        <th scope="col">#</th>
+                                        <th scope="col">Username</th>
+                                        <th scope="col">Email</th>
+                                        <th scope="col">Age</th>
+                                        <th scope="col">Address</th>
+                                        <th scope="col">Pincode</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                	{% for x in account %}
+                                    <tr>
+                                        <th scope="row">{{ x['SN'] }}</th>
+                                        <td>{{ x['username'] }}</td>
+                                        <td>{{ x['email'] }}</td>
+                                        <td>{{ x['age'] }}</td>
+                                        <td>{{ x['address'] }}</td>
+                                        <td>{{ x['pincode'] }}</td>
+                                        <td>
+                                            <a href="{{ url_for('modify', SN=x['SN']) }}" class="fa fa-edit" role="button">Modify</a>
+                                        </td>
+                                    </tr>
+                                    {% endfor %}
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock %}

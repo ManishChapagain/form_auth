@@ -1,0 +1,49 @@
+{% extends "main.html" %}
+{% block content %}
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-10 col-xl-9 mx-auto">
+        <div class="card card-signin flex-row my-5">
+          <div class="card-img-left d-none d-md-flex">
+             <!-- Background image for card set in CSS! -->
+          </div>
+          <div class="card-body">
+            <h5 class="card-title text-center">Insert</h5>
+            <form class="form-signin" method="post">
+              <div class="form-label-group">
+                <input type="text" name = "username" id="inputUserame" class="form-control" placeholder="Username" required autofocus>
+                <label for="inputUserame">Username</label>
+              </div>
+
+              <div class="form-label-group">
+                <input type="email" name = "email" id="inputEmail" class="form-control" placeholder="Email address" required>
+                <label for="inputEmail">Email address</label>
+              </div>
+
+              <hr>
+
+              <div class="form-label-group">
+                <input type="age" name = "age" id="inputage" class="form-control" placeholder="Age" required>
+                <label for="inputAge">Age</label>
+              </div>
+
+              <div class="form-label-group">
+                <input type="address" name = "address" id="inputaddress" class="form-control" placeholder="Address" required>
+                <label for="inputAddress">Address</label>
+              </div>
+
+              <div class="form-label-group">
+                <input type="pincode" name = "pincode" id="inputpincode" class="form-control" placeholder="Pincode" required>
+                <label for="inputpincode">Pincode</label>
+              </div>
+
+              <div class="msg">{{ msg }}</div>
+
+              <button class="btn btn-lg btn-primary btn-block text-uppercase" type="submit">Insert</button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+{% endblock %}
